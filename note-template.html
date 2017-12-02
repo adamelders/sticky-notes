@@ -1,5 +1,5 @@
-<!--<link rel="stylesheet" href="css/style.css">-->
-<div ng-repeat="note in notes.notes">
+<!-- Custom element directive to display all stored notes -->
+<div data-ng-repeat="note in notes.notes">
 
   <div class="noteContainer">
 
@@ -11,15 +11,15 @@
 
     <div class="noteContentContainer">
 
-      <p id="noteContent" ng-bind-html="note.content | unsafe"></p>
+      <p id="noteContent" data-ng-bind-html="note.content | unsafe"></p>
 
     </div>
 
     <div class="noteFooterContainer">
 
-      <img id="deleteButton" src="img/deleteButton.png">
+      <img id="deleteButton" src="img/deleteButton.png" alt="Delete Note">
       
-      <p>Created: {{notes.createdOn | date}}</p>
+      <p>Created: {{note.createdOn | date}}</p>
       
       <p></p>
 
