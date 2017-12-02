@@ -1,0 +1,30 @@
+<!--<link rel="stylesheet" href="css/style.css">-->
+<div ng-repeat="note in notes.notes">
+
+  <div class="noteContainer">
+
+    <div class="noteTitleBar">
+
+      <p id="noteTitle">{{note.title}}</p>
+
+    </div>
+
+    <div class="noteContentContainer">
+
+      <p id="noteContent" ng-bind-html="note.content | unsafe"></p>
+
+    </div>
+
+    <div class="noteFooterContainer">
+
+      <img id="deleteButton" src="img/deleteButton.png">
+      
+      <p>Created: {{notes.createdOn | date}}</p>
+      
+      <p></p>
+
+    </div>
+
+  </div>
+  
+</div>

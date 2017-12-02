@@ -1,0 +1,118 @@
+/* Animation for page title link hover */
+@keyframes linkHover {
+  from { color: white; }
+  to { color: #1998dd; }
+}
+
+body {
+  background-color: #ecf0f1;
+  min-width: 365px;
+}
+
+/* Reset styles for p element */
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Additional CSS for bootstrap navbar class */
+.navbar {
+  background-color: navy;
+  height: 70px;
+  box-shadow: 0px 5px 5px grey;
+}
+
+.navbarTitle {
+  font-size: 28px;
+  font-family: Segoe UI, Arial, sans-serif;
+  font-weight: bold;
+  color: white;
+  border: 2px solid white;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+/* Hover style, pulse animation for the title link */
+.navbarTitle:hover {
+  text-decoration: none;
+  color: #1998dd;
+  opacity: 1;
+  animation: linkHover 1s infinite alternate ease-in;
+}
+
+.createButton {
+  font-size: 28px;
+  font-family: Segoe UI, Arial, sans-serif;
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  padding: 0 10px;
+  box-shadow: 3px 3px 3px black;
+}
+
+/* Simple hover style for the Create button */
+.createButton:hover {
+  text-decoration: none;
+  background-color: ;
+  color: #1998dd;
+  box-shadow: 5px 5px 5px black;
+}
+
+.createButton:active {
+  position: relative;
+  top: 1px;
+  left: 1px;
+}
+
+/* Styles for the sticky notes */
+.noteContainer {
+  background-color: white;
+  font-family: Segoe UI, Arial, sans-serif;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 0 0 15px 0;
+  width: 250px;
+  height: 250px;
+  box-shadow: 3px 3px 3px grey;
+  margin: 30px 30px;
+  display: inline-block;
+  float: left;
+}
+
+.noteTitleBar {
+  height: 40px;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  position: relative;
+  background-color: #1998dd;
+}
+
+#noteTitle {
+  margin: 0 auto;
+  padding-top: 5px;
+}
+
+.noteContentContainer {
+  color: black;
+  padding: 0 5px;
+  position: relative;
+  height: 180px;
+}
+
+.noteFooterContainer {
+  border-radius: 0 0 15px 0;
+  border-top: 1px solid black;
+  height: 30px;
+}
+
+.noteFooterContainer p {
+  float: right;
+  margin-right: 15px;
+}
+
+#deleteButton {
+  margin: auto;
+  padding: 0 0 0 5px;
+}
