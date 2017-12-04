@@ -56,6 +56,11 @@
         return;
       }
       
+      // Replace newlines with html line break.
+      var str = this.note.content;
+      str = str.replace(/(?:\r\n|\r|\n)/g, '<br />');
+      this.note.content = str;
+      
       // Set the creation date for the note, and add the currently saved
       // notes data to the current scope's note object. Set the new note
       // to a blank, empty object to clear the fields and data.
