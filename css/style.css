@@ -71,12 +71,14 @@ p {
   font-weight: bold;
   border: 1px solid black;
   border-radius: 0 0 15px 0;
+  position: relative;
   width: 250px;
   height: 250px;
   box-shadow: 3px 3px 3px grey;
   margin: 30px 30px;
   display: inline-block;
   float: left;
+  z-index: -1;
 }
 
 .noteTitleBar {
@@ -87,6 +89,7 @@ p {
   text-align: center;
   position: relative;
   background-color: #1998dd;
+  border-bottom: 1px solid black;
 }
 
 #noteTitle {
@@ -122,14 +125,14 @@ p {
   width: 400px;
   min-width: 250px;
   min-height: 250px;
-  margin: 20px auto;
-}
-
-#createNoteTitle {
-  font-family: Segoe UI, Arial, sans-serif;
-  width: 100%;
-  margin: 5px 0;
-  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -70%);
+  -moz-transform: translate(-50%, -70%);
+  -ms-transform: translate(-50%, -70%);
+  transform: translate(-50%, -70%);
+  z-index: 10;
 }
 
 .createForm {
@@ -149,6 +152,7 @@ p {
 
 .createFormTitleBar input {
   font-family: Segoe UI, Arial, sans-serif;
+  border: 1px solid grey;
   width: 90%;
   height: 60%;
   text-align: center;
@@ -166,11 +170,14 @@ p {
   height: 75%;
   width: 100%;
   position: relative;
+  background-color: #ecf0f1;
   border-bottom: 1px dashed grey;
 }
 
 .createFormContentArea textarea {
   font-family: Segoe UI, Arial, sans-serif;
+  border: 1px solid grey;
+  resize: none;
   width: 90%;
   height: 90%;
   margin: 0;
@@ -188,6 +195,7 @@ p {
   width: 100%;
   position: relative;
   text-align: center;
+  background-color: #ecf0f1;
 }
 
 #createFormSubmitButton {

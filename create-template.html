@@ -1,27 +1,25 @@
 <!-- Custom element directive to display a Create form to add new notes -->
 <div class="createFormContainer">
   
-  <h2 id="createNoteTitle">Create a new note</h2>
-  
-  <div class="createForm">
+  <div class="createForm" name="createForm" data-ng-controller="CreateNoteController as createCtrl" novalidate>
   
     <div class="createFormTitleBar">
-  
-      <input type="text" placeholder="Note Title...">
-  
+    
+      <input type="text" ng-model="createCtrl.note.title" placeholder="Note Title..." required>
+    
     </div>
     
     <div class="createFormContentArea">
     
-      <textarea placeholder="Type your note content here..."></textarea>    
+      <textarea ng-model="createCtrl.note.content" placeholder="Type your note content here..." required></textarea>
     
     </div>
     
     <div class="createFormFooter">
     
-      <a id="createFormSubmitButton" href="" ng-click="notes.hideCreateForm(true);notes.hideNotes(false);">Submit</a>
+      <a id="createFormSubmitButton" href="" ng-click="createCtrl.addNote(notes)">Submit</a>
       
-      <a id="createFormCancelButton" class="pull-right" href="#">Cancel</a>
+      <a id="createFormCancelButton" class="pull-right" href="" ng-click="createCtrl.cancelNote(notes)">Cancel</a>
     
     </div>
   
