@@ -20,14 +20,28 @@
       }
     };
     
+    // Hide the Create form.
     this.hideCreateForm = function(value) {
       if (value === true)
         this.createFormHidden = true;
       if (value === false)
         this.createFormHidden = false;
     };
+    
+    // Delete a saved note.
+    this.deleteNote = function(note) {
+      if (note.id !== undefined) {
+        
+        // Get the index of the note from savedNotes.
+        var index = this.notes.indexOf(note);
+        
+        // Remove the note from the savedNotes array object.
+        this.notes.splice(index, 1);
+      }
+    }
   });
   
+  // A controller to handle note creation.
   app.controller('CreateNoteController', function() {
     
     // Create an empty object to store note data.
@@ -39,7 +53,7 @@
       notes.hideCreateForm(true); 
       notes.hideNotes(false);
       this.note = {};
-    }
+    };
     
     // Adds a new note to the NotesController.notes object. This
     // will be changed to a JSON file later, so that notes are saved between sessions.
@@ -61,6 +75,9 @@
       str = str.replace(/(?:\r\n|\r|\n)/g, '<br />');
       this.note.content = str;
       
+      // Create a unique ID.
+      this.note.id = notes.notes.length + 1;
+      
       // Set the creation date for the note, and add the currently saved
       // notes data to the current scope's note object. Set the new note
       // to a blank, empty object to clear the fields and data.
@@ -70,7 +87,7 @@
       this.note = {};
       notes.hideNotes(false);
       notes.hideCreateForm(true);
-    }
+    };
   });
   
   app.directive("noteTemplate", function() {
@@ -94,12 +111,14 @@
   /* later so we can store notes in a local file. */
   var savedNotes = [
     {
+      id: 1,
       title: "ToDo List",
       content: "1. Learn JavaScript<br><br>2. Learn AngularJS<br><br>3. Create AngularJS Example!",
       createdOn: 1512104400000 /* 12/01/2017 */
     },
 
     {
+      id: 2,
       title: "Test Title",
       content: "This is some test content.<br><br>This is some more <em>test content</em>.<br><br>These notes support HTML formatting.",
       createdOn: 1512190800000 /* 12/02/2017 */

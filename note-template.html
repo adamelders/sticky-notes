@@ -16,8 +16,10 @@
     </div>
 
     <div class="noteFooterContainer">
-
-      <img id="deleteButton" src="img/deleteButton.png" alt="Delete Note">
+      
+      <a href="" ng-click="notes.deleteNote(note)">
+        <img class="deleteButton" id="{{note.id}}" src="img/deleteButton.png" alt="Delete Note">
+      </a>
       
       <p>Created: {{note.createdOn | date}}</p>
       

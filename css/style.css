@@ -121,7 +121,7 @@ p {
   margin-right: 15px;
 }
 
-#deleteButton {
+.deleteButton {
   margin: auto;
   padding: 0 0 0 5px;
 }
