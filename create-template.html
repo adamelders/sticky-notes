@@ -1,0 +1,30 @@
+<!-- Custom element directive to display a Create form to add new notes -->
+<div class="createFormContainer">
+  
+  <h2 id="createNoteTitle">Create a new note</h2>
+  
+  <div class="createForm">
+  
+    <div class="createFormTitleBar">
+  
+      <input type="text" placeholder="Note Title...">
+  
+    </div>
+    
+    <div class="createFormContentArea">
+    
+      <textarea placeholder="Type your note content here..."></textarea>    
+    
+    </div>
+    
+    <div class="createFormFooter">
+    
+      <a id="createFormSubmitButton" href="" ng-click="notes.hideCreateForm(true);notes.hideNotes(false);">Submit</a>
+      
+      <a id="createFormCancelButton" class="pull-right" href="#">Cancel</a>
+    
+    </div>
+  
+  </div>  
+  
+</div>

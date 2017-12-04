@@ -18,22 +18,26 @@
     
   </head>
   
-  <body>
+  <body data-ng-controller="NotesController as notes">
     
     <!-- Top navigation bar -->
     <div class="navbar">
       
       <a class="navbarTitle" href="#">Sticky Notes</a>
       
-      <a class="createButton" href="#">+ Create</a>
+      <!-- The Create button will hide the current notes, and show the Create form. -->
+      <a class="createButton" href="" ng-click="notes.hideNotes(true);notes.hideCreateForm(false);">+ Create</a>
       
     </div>
     
     <!-- Notes Container -->
-    <div class="notesBody" data-ng-controller="NotesController as notes">
+    <div class="notesBody">
     
       <!-- Custom element directive to display the notes -->
-      <note-template></note-template>
+      <note-template ng-hide="notes.notesHidden"></note-template>
+      
+      <!-- Custom element directive to display the create form -->
+      <create-template ng-hide="notes.createFormHidden"></create-template>
     
     </div>
     
