@@ -2,9 +2,16 @@
   "use strict";
   var app = angular.module('notesApp', []);
   
-  app.controller('NotesController', function() {
-    this.notes = savedNotes;
+  app.controller('NotesController', [ '$http', function($http) {
     this.createFormHidden = true;
+    
+    // Get the notes data from a local JSON file. Initialize empty data
+    // to make sure the page loads correctly before the JSON data gets loaded.
+    var notesCtrl = this;
+    notesCtrl.notes = {};
+    $http.get('json_store/notesData.json').success(function(data) {
+      notesCtrl.notes = data;
+    });    
     
     // Blur the notes in the background if the Create form is shown.
     this.hideNotes = function(value) {
@@ -39,7 +46,7 @@
         this.notes.splice(index, 1);
       }
     }
-  });
+  }]);
   
   // A controller to handle note creation.
   app.controller('CreateNoteController', function() {
@@ -106,23 +113,5 @@
   
   /* Custom filter to display HTML without sanitization */
   app.filter('unsafe', function($sce) { return $sce.trustAsHtml; });
-  
-  /* Temporary object to store notes data, will factor this out to a JSON file */
-  /* later so we can store notes in a local file. */
-  var savedNotes = [
-    {
-      id: 1,
-      title: "ToDo List",
-      content: "1. Learn JavaScript<br><br>2. Learn AngularJS<br><br>3. Create AngularJS Example!",
-      createdOn: 1512104400000 /* 12/01/2017 */
-    },
-
-    {
-      id: 2,
-      title: "Test Title",
-      content: "This is some test content.<br><br>This is some more <em>test content</em>.<br><br>These notes support HTML formatting.",
-      createdOn: 1512190800000 /* 12/02/2017 */
-    }
-  ];
   
 })();

@@ -1,0 +1,15 @@
+[
+  {
+    "id": "1",
+    "title": "ToDo List",
+    "content": "1. Learn JavaScript<br><br>2. Learn AngularJS<br><br>3. Create AngularJS Example!",
+    "createdOn": "1512104400000"
+  },
+
+  {
+    "id": "2",
+    "title": "Test Title",
+    "content": "This is some test content.<br><br>This is some more <em>test content</em>.<br><br>These notes support HTML formatting.",
+    "createdOn": "1512190800000"
+  }
+]
